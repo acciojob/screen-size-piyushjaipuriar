@@ -1,16 +1,33 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Window Width and Height</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+</style>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+    <h1>Window Width and Height</h1>
+    <p>Width: <span id="width"></span></p>
+    <p>Height: <span id="height"></span></p>
 
+    <script>
+        function getWindowSize() {
+            var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+            var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+            document.getElementById('width').textContent = width;
+            document.getElementById('height').textContent = height;
+        }
+
+        // Initial call to get window size
+        getWindowSize();
+
+        // Attach an event listener for window resize
+        window.addEventListener('resize', getWindowSize);
+    </script>
 </body>
-
 </html>
